@@ -254,8 +254,9 @@ Input.GetKeyDown(KeyCode.C) // Toggle projection key
 ```
 
  - These values are float inputs (mostly -1 to 1), mapped by Unity’s Input Manager (Project Settings → Input).
+
 | Variable            | Type             | Controls            | Applies To                          |
-| ------------------- | ---------------- | ------------------- | ----------------------------------- |
+|---------------------|------------------|---------------------|-------------------------------------|
 | `cam`               | Camera Component | access              | Camera on GameObject                |
 | `moveSpeed`         | float            | Camera panning (XZ) | `transform.position`                |
 | `rotationSpeed`     | float            | Mouse look          | `transform.Rotate`                  |
