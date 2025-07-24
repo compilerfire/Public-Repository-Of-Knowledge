@@ -254,17 +254,16 @@ Input.GetKeyDown(KeyCode.C) // Toggle projection key
 ```
 
  - These values are float inputs (mostly -1 to 1), mapped by Unity’s Input Manager (Project Settings → Input).
-
-Summary Table
-Variable	        Type	            Controls	            Applies To
-cam	Camera	        Component           access	                Camera on GameObject
-moveSpeed	        float	            Camera panning (XZ)	    transform.position
-rotationSpeed	    float	            Mouse look	            transform.Rotate
-zoomSpeed	        float	            Scroll zoom rate	    fieldOfView or orthographicSize
-minFOV, maxFOV	    float	            Zoom limits	            Perspective only
-orthographicSize	float	            2D zoom	                Orthographic only
-startOrthographic	bool	            Start in 2D or 3D	    Initialization
-nearClip, farClip	float	            Render depth	        Camera clipping
-clearFlags	        CameraClearFlags	BG render mode	        Clear method
-backgroundColor	    Color	            BG color (flat)	        If SolidColor
-cullingMask	        LayerMask	        What to render	        Object layers
+| Variable            | Type             | Controls            | Applies To                          |
+| ------------------- | ---------------- | ------------------- | ----------------------------------- |
+| `cam`               | Camera Component | access              | Camera on GameObject                |
+| `moveSpeed`         | float            | Camera panning (XZ) | `transform.position`                |
+| `rotationSpeed`     | float            | Mouse look          | `transform.Rotate`                  |
+| `zoomSpeed`         | float            | Scroll zoom rate    | `fieldOfView` or `orthographicSize` |
+| `minFOV, maxFOV`    | float            | Zoom limits         | Perspective only                    |
+| `orthographicSize`  | float            | 2D zoom             | Orthographic only                   |
+| `startOrthographic` | bool             | Start in 2D or 3D   | Initialization                      |
+| `nearClip, farClip` | float            | Render depth        | Camera clipping                     |
+| `clearFlags`        | CameraClearFlags | BG render mode      | Clear method                        |
+| `backgroundColor`   | Color            | BG color (flat)     | If SolidColor                       |
+| `cullingMask`       | LayerMask        | What to render      | Object layers                       |
