@@ -3,6 +3,8 @@
  - by Dawid Jakubowski
 
 ## Free Camera Looking
+
+
 ### Example Code
 
 > Use the camera available in the default 3D project, and attach this script (Camera.cs) to this camera.
@@ -127,3 +129,142 @@ public class Camera : MonoBehaviour
 
 }
 ```
+
+### Explaination:
+
+------------------------------------
+
+```csharp
+private Camera cam;
+```
+ - The reference of the camera, 
+ - How: Fetched with GetComponent<Camera>() in Awake()
+
+------------------------------------
+
+```csharp
+public float moveSpeed = 10f;
+```
+
+ - Controls the translation speed when pressing WASD or Arrow Keys
+ - Affects transform.position via Input.GetAxis(...)
+ - Default: 10 Unity units/second
+
+------------------------------------
+
+```csharp
+public float rotationSpeed = 100f;
+```
+
+ - Controls mouse look sensitivity
+ - Affects transform.Rotate(...) in world and local space
+ - 100 is fast but usable; tweak to fit your feel
+
+------------------------------------
+
+```csharp
+public float zoomSpeed = 5f;
+```
+
+ - Controls how fast zoom reacts to scroll wheel
+ - Affects either:
+     -Camera.fieldOfView in Perspective mode
+     -Camera.orthographicSize in Orthographic mode
+
+------------------------------------
+
+```csharp
+public float minFOV = 15f;
+public float maxFOV = 90f;
+```
+
+ - Min/max constraints for 3D zoom (Perspective)
+ - Prevents extreme lens distortion or invisibility
+
+------------------------------------
+
+```csharp
+public float orthographicSize = 5f;
+```
+
+ - Camera size (height from center to top) in 2D (Orthographic) view
+ - Smaller value → zoomed in
+ - Only used if cam.orthographic == true
+
+------------------------------------
+
+```csharp
+public bool startOrthographic = false;
+```
+
+ - Toggles whether camera starts in 2D (orthographic) or 3D (perspective) at runtime
+ - Used during initialization in Awake()
+
+------------------------------------
+
+```csharp
+public float nearClip = 0.3f;
+public float farClip = 1000f;
+```
+
+ - Near/far bounds of what camera renders:
+     - Anything closer than nearClipPlane or farther than farClipPlane is invisible
+     - Default Unity camera uses 0.3 and 1000 respectively
+
+------------------------------------
+
+```csharp
+public CameraClearFlags clearFlags = CameraClearFlags.Skybox;
+```
+
+ - Determines what the camera renders behind your objects:
+     - Skybox: default
+     - SolidColor: flat color (e.g., black)
+     - DepthOnly: only affects depth buffer (for stacked cameras)
+     - Nothing: renders nothing
+
+------------------------------------
+
+```csharp
+public Color backgroundColor = Color.black;
+```
+ - If clearFlags = SolidColor, this defines that color
+ - Color.black, Color.red, etc. are Unity constants
+
+------------------------------------
+
+```csharp
+public LayerMask cullingMask = ~0;
+```
+
+ - Tells the camera which object layers to render
+ - ~0 means “all layers”
+ - Used for rendering only specific types of objects (e.g., HUD layer, enemies, etc.)
+
+------------------------------------
+
+```csharp
+Input.GetAxis("Horizontal") // A/D or Left/Right
+Input.GetAxis("Vertical")   // W/S or Up/Down
+Input.GetAxis("Mouse X")    // Horizontal mouse movement
+Input.GetAxis("Mouse Y")    // Vertical mouse movement
+Input.GetAxis("Mouse ScrollWheel") // Mouse wheel
+Input.GetMouseButton(1)     // Right mouse button held
+Input.GetKeyDown(KeyCode.C) // Toggle projection key
+```
+
+ - These values are float inputs (mostly -1 to 1), mapped by Unity’s Input Manager (Project Settings → Input).
+
+Summary Table
+Variable	        Type	            Controls	            Applies To
+cam	Camera	        Component           access	                Camera on GameObject
+moveSpeed	        float	            Camera panning (XZ)	    transform.position
+rotationSpeed	    float	            Mouse look	            transform.Rotate
+zoomSpeed	        float	            Scroll zoom rate	    fieldOfView or orthographicSize
+minFOV, maxFOV	    float	            Zoom limits	            Perspective only
+orthographicSize	float	            2D zoom	                Orthographic only
+startOrthographic	bool	            Start in 2D or 3D	    Initialization
+nearClip, farClip	float	            Render depth	        Camera clipping
+clearFlags	        CameraClearFlags	BG render mode	        Clear method
+backgroundColor	    Color	            BG color (flat)	        If SolidColor
+cullingMask	        LayerMask	        What to render	        Object layers
