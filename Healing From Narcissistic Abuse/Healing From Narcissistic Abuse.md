@@ -36,3 +36,30 @@ V. **Explore Core Values** - Identity what you believe in, and want -- Outside o
 
 VI. **Reclaim Agency** - Practice making small, autonomous decisions to rebuild a sense of control.
 
+-----------------------------------------
+
+## Relational and Environmental Detox (Separation and Prevention) 
+**Goal:** Remove toxic influences, break enmeshment, and establilsh a new support network.
+
+### Principles:
+
+I. **No Contact / Low Contact** - Cut ties or implement firm boundaries where cutting off isn't possible
+
+II. **Social Detoxx** - Identify "Flying Monkeys" Co-dependent dynamics, or systems that enabled the abuse.
+
+III. **Create a safety Network** - Choose people who support your growth, respect your boundaries, and believe your story.
+
+IV. **Disengage from Control Loops** - Narcissists often bait through guilt, crises, or triangulaton. Do not re-engage.
+
+V. **Lifestyle Stabilization** - Secure work, housing, health, or routines that reduce dependence on abuser-connected systems.
+
+### Recurring Meta-Principles (Process Rules)
+
+1. **Glow Slow** - Trauma recovery cannot be rushed. Stabililzation must come reprocessing trauma.
+
+2. **Track your triggers** - Note recurring emotional flashbacks or shame spirals. These are doors to unresolved pain.
+
+3. **Honor your Grief** - You are not only mourning a person but also the loss of identity, time, family structure, or dreams.
+
+4. **Non-Linear Recovery** - There will be regressions. Measure progress not by feeling better, but by responding better.
+
